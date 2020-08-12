@@ -1,0 +1,16 @@
+<div class="show">
+	<div class="show_book">
+		<% if flash[:success] %>
+			<p class="success"><%= flash[:success] %></p>
+		<% end %>
+		<dl class="book_list clearfix">
+			<dt class="book_list_item">Title:</dt>
+				<dd class="item"><%= @book.title %></dd>
+			<dt class="book_list_item">Body:</dt>
+				<dd class="item"><%= @book.body %></dd>
+		</dl>
+	</div>
+
+
+<%= link_to "Edit", edit_book_path(@book) %> | <%= link_to "Back", books_path %>
+</div>
