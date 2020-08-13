@@ -18,8 +18,8 @@ class BooksController < ApplicationController
   def update
   	@book = Book.find(params[:id])
   	if @book.update(book_params)
-  	   redirect_to book_path(@book), flash: {success: "Book was successfully updated."}
-     else
+      redirect_to book_path(@book), flash: {success: "Book was successfully updated."}
+    else
       render :edit
     end
   end
@@ -50,7 +50,7 @@ class BooksController < ApplicationController
 
 
   private
-  	def book_params
-  		params.require(:book).permit(:title, :body)
-  	end
+  def book_params
+    params.require(:book).permit(:title, :body)
+  end
 end
